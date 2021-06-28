@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="containerNav">
+            <div class="containerNavLeft">
+                ChatAPP
+            </div>
+            <div class="containerNavRight">
+                Room(1)
+            </div>
+        </div>
+
+        <div class="chatSection" id='chatSection'> 
+        </div>
+        <div class="input">
+            <input max="50" type="text" id="text" class="inputText">
+            <button class="sendBtn" id="sendBtn">Send</button>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyBHRDLUXwv266BzTIk2k7v6nXdqVUHOl4c",
+        authDomain: "vocal-messenger-310505.firebaseapp.com",
+        databaseURL: "https://vocal-messenger-310505-default-rtdb.firebaseio.com",
+        projectId: "vocal-messenger-310505",
+        storageBucket: "vocal-messenger-310505.appspot.com",
+        messagingSenderId: "127426744511",
+        appId: "1:127426744511:web:ba772a1acd0553978cf60a",
+        measurementId: "G-0J7G8R850G"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database()
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
