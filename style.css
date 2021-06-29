@@ -5,7 +5,7 @@ body{
     font-family: sans-serif;
 }
 
-*{
+.Messege{
     transition: all .5s ease;
 }
 
@@ -43,6 +43,7 @@ body{
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .Messege{
@@ -56,6 +57,13 @@ body{
     justify-content: space-between;
     align-items: center;
     overflow-x: hidden;
+    animation: MessegeAnimate 1.2s ease-in-out;
+}
+
+@keyframes MessegeAnimate{
+    from{
+        opacity: 0;
+    }
 }
 .name{
     font-size: 1.2rem;
@@ -102,6 +110,9 @@ body{
     font-size: 1.2rem;
     text-transform: capitalize;
     border-radius: 3px;
+    cursor: pointer;
+}.deleteBtn:hover{
+    background-color: crimson;
 }
 
 
