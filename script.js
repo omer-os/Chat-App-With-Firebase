@@ -2,7 +2,6 @@ var NAME = prompt('enter your name : ')
 var TEXT = document.getElementById('text')
 var sendBtn = document.getElementById('sendBtn')
 
-TEXT =='' ? TEXT=
 
 sendBtn.addEventListener('click',()=>{
     if (!TEXT.value==''){
