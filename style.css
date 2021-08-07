@@ -1,131 +1,248 @@
+:root{
+    --main-background: rgb(52, 40, 75);
+    --container-background: rgb(52, 40, 75);
+    --header-text-color: white;
+    --msg-input-background:rgb(204, 222, 255);
+    --send-btn-background: rgb(75, 75, 255);
+    --send-btn-color: white;
+    --border: gray;
+    --msg-background: #b4e2ff;
+    --loading-color: rgb(236, 71, 20);
+}
+
+
 body{
     margin: 0;
     padding: 0;
-    background-color: rgb(44, 44, 44);
+    box-sizing: border-box;
+    background-color: var(--main-background);
     font-family: sans-serif;
 }
-
-.Messege{
-    transition: all .5s ease;
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--container-background);
+    padding: 15px;
+    width: 40%;
+    transition: all .4s ease;
+    z-index: -1;
 }
 
-.container{
+
+/* top start*/
+
+.containerTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid gray;
+    color: var(--header-text-color);
+}.TopLeft{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.TopRight{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* top end */
+
+
+
+
+/* middle start */
+
+.containerMiddle{
+    height: 79vh;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+
+/* middle end */
+
+
+
+/* bottom start */
+
+.containerBottom{
+    display: flex;
+    padding: 10px 0 0 0;
+    border-top: 1px solid var(--border);
+}
+#msgInput{
     width: 70%;
-    height: fit-content;
+    padding: 5px;
+    background-color: var(--msg-input-background);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    font-weight: 600;
+}#sendBtn{
+    width: 30%;
+    background-color: var(--send-btn-background);
+    color: var(--send-btn-color);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 3px;
+}#sendBtn:active{
+    transform: scale(0.95);
+}
+
+/* bottom end */
+
+
+
+
+
+/* masseges */
+.msg{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--msg-background);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    animation: animateMsg 1s ease-in-out;
+}
+.msgTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(128, 128, 128);
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+.msgName{
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.msgDate{
+    color: gray;
+}
+@keyframes animateMsg{
+    from{
+        opacity: 90%;
+    }
+}
+
+
+
+
+
+*{
+    scroll-behavior: smooth;
+    scroll-snap-type: proximity;
+}
+
+
+#delete{
+    margin-top: 5px;
+    background-color: rgb(253, 51, 0);
+    color: white;
+    border: none;
+    padding: 5px 0;
+    border-radius: 3px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* loading */
+#loadingBlockScreen{
+    background-color: var(--main-background);
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    transition: all 1s ease-in-out;
+}
+.loading{
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
     left: 50%;
-    background-color: rgb(83, 83, 83);
-    border: 2px solid rgb(112, 112, 112);
-}
-
-.containerNav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    border-bottom: 2px solid rgb(112, 112, 112);
-}
-.containerNavLeft{
-    font-size: 1.4rem;
-    color: white;
-    font-weight: 700;
-}
-.containerNavRight{
-    font-size: 1.2rem;
-    color:cadetblue;
-    margin-right: 10px;
-}
-
-.chatSection{
-    height: 380px;
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-}
-
-.Messege{
-    margin: 10px;
-    background-color: grey;
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    overflow-x: hidden;
-    animation: MessegeAnimate 1.2s ease-in-out;
-}
-
-@keyframes MessegeAnimate{
-    from{
-        opacity: 0;
-    }
-}
-.name{
-    font-size: 1.2rem;
-    text-transform: capitalize;
-    font-weight: 600;
-    border-bottom: 2px solid white;
-    width: 150px;
-    padding: 5px;
-}
-
-.input{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-}
-.inputText{
-    padding: 5px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.2rem;
-    background-color: rgb(175, 175, 175);
-    width: 100%;
-    margin-right: 5px;
-}
-
-.sendBtn{
-    background-color: rgb(189, 189, 189);
-    border: none;
-    font-size: 1.2rem;
-    margin-right: 10px;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-}.sendBtn:active{
-    transform: scale(1.06);
-    box-shadow: 0px 0px 5px white;
-}
-
-.deleteBtn{
-    background-color: cadetblue;
-    color: white;
-    border: none;
-    padding: 3px;
-    font-size: 1.2rem;
-    text-transform: capitalize;
-    border-radius: 3px;
-    cursor: pointer;
-}.deleteBtn:hover{
-    background-color: crimson;
-}
-
-
-@media (max-width: 500px){
-    .container{
-        width: 90%;
-    }
-    .deleteBtn{
-        font-size: 1rem;
-        margin-top: 40px;
-    }
-}
-
-@media (max-height: 700px){
+    gap: 5px;
+    height: 50px;
     
+}
+.loadingLine{
+    width: 10px;
+    background-color: var(--msg-background);
+    border-radius: 3px;
+}
+.loadingLine2{
+    height: 25px;
+    animation: animateLoadingLine1 1s infinite alternate  1s ease-in-out;
+}
+.loadingLine1 , .loadingLine3{
+    height: 50px;
+    animation: animateLoadingLine1-3 1s infinite alternate ease-in-out;
+}
+
+@keyframes animateLoadingLine1{
+    from{
+        height: 25px;
+    }
+    to{
+        height: 50px;
+        background-color: var(--loading-color);
+    }
+    to{
+        height: 50px;
+        background-color: var(--loading-color);
+    }
+}
+@keyframes animateLoadingLine1-3{
+    from{
+        height: 25px;
+    }
+    to{
+        height: 50px;
+        background-color: var(--loading-color);
+    }
+    to{
+        height: 50px;
+        background-color: var(--loading-color);
+    }
+}
+
+
+.loadingText{
+    position: absolute;
+    top: 40px;
+    right: -20px;
+    color: white;
+}
+
+.hideLoading{
+    opacity: 0;
+    display: none;
+}
+
+
+
+
+@media (max-width: 850px){
+    .container{
+        width: 80%;
+    }
 }

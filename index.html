@@ -8,44 +8,51 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+
     <div class="container">
-        <div class="containerNav">
-            <div class="containerNavLeft">
-                ChatAPP
+        <div class="containerTop">
+            <div class="TopLeft">
+                Chat App
             </div>
-            <div class="containerNavRight">
-                Room(1)
+            <div class="TopRight" id="topRight">
+                sololearn
             </div>
+        </div>
+        <div class="containerMiddle" id="containerMiddle">
+
+            <!-- <div class="msg">
+                <div class="msgTop">
+                    <div class="msgName">omar chatin</div>
+                    <div class="msgDate">2021/1/1</div>
+                </div>
+                <div class="msgBottom">
+                    this is some text
+                </div>
+            </div> -->
+            
         </div>
 
-        <div class="chatSection" id='chatSection'> 
-        </div>
-        <div class="input">
-            <input max="50" type="text" id="text" class="inputText">
-            <button class="sendBtn" id="sendBtn">Send</button>
+        <div class="containerBottom">
+            <input type="text" id="msgInput">
+            <button id="sendBtn">send</button>
         </div>
     </div>
 
 
 
+    <div id="loadingBlockScreen">
+        <div class="loading">
+            <div class="loadingLine1 loadingLine"></div>
+            <div class="loadingLine2 loadingLine"></div>
+            <div class="loadingLine3 loadingLine"></div>
+            <p class="loadingText">loading...</p>
+        </div>
+    </div>
 
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-
-    <script>
-    var firebaseConfig = {
-        apiKey: "AIzaSyBHRDLUXwv266BzTIk2k7v6nXdqVUHOl4c",
-        authDomain: "vocal-messenger-310505.firebaseapp.com",
-        databaseURL: "https://vocal-messenger-310505-default-rtdb.firebaseio.com",
-        projectId: "vocal-messenger-310505",
-        storageBucket: "vocal-messenger-310505.appspot.com",
-        messagingSenderId: "127426744511",
-        appId: "1:127426744511:web:ba772a1acd0553978cf60a",
-        measurementId: "G-0J7G8R850G"
-    };
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.database()
-    </script>
-    <script src="script.js"></script>
-</body>
-</html>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+    <script src="https://drive.google.com/file/d/1N3EiklWXs3etv6nTwpJ_6ncYIzxc8y2D/view?usp=sharing"></script>
+    <script src="./app.js"></script>
+</body></html>

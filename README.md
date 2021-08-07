@@ -1,3 +1,6 @@
-"# Chat-App-With-Firebase" 
-"# Chat-App-With-Firebase" 
-"# Chat-App-With-Firebase" 
+# chat app
+
+> this app created using
+        * html ans css
+        * pure jabvascript
+        * firebase
